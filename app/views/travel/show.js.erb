@@ -1,0 +1,3 @@
+$("#metlink-show").html("<%= escape_javascript(render partial: 'travel/metlink/stop', locals: { stop: @stop } )%>");
+$("#metlink-show").show();
+$("#metlink-select").hide();

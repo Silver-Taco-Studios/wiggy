@@ -1,0 +1,9 @@
+<%= button_to travel_index_path, method: 'get', remote: true, class: "mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" do %>
+   <i class="material-icons">navigate_before</i>
+<% end %> <h4><%= @stop.name %><br></h4>
+Services:<br>
+<% @stop.services.each do |bus| %>
+  The <%= "#{bus.name} (#{bus.id})" %> bus is <%= bus.status %>
+  and will arrive in <%= distance_of_time_in_words bus.expected_arrival , DateTime.now  %>
+  <br>
+<% end %>

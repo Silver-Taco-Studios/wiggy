@@ -1,0 +1,8 @@
+<div class="metlink-card">
+  <div id="metlink-show">
+    <%= render "travel/metlink/stop"  if @stop.present? %>
+  </div>
+  <div id="metlink-select">
+    <%= render "travel/metlink/select_stop" if @stop.nil? %>
+  </div>
+</div>

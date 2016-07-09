@@ -1,0 +1,7 @@
+.metlink-card {
+  @extend .mdl-card;
+  @extend .mdl-cell;
+  @extend .mdl-cell--6-col;
+  @extend .mdl-shadow--2dp;
+  padding: 0% 5%;
+}
