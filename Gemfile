@@ -33,6 +33,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-spotify'
+gem 'json'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.4'

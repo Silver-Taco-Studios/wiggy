@@ -1,0 +1,5 @@
+<%= @stop.name %><br>
+<% @stop.services.each do |bus| %>
+  The <%= "#{bus.name}, #{bus.id}" %> Bus is <%= bus.status %> and will arrive in <%= distance_of_time_in_words bus.expected_arrival , DateTime.now  %> 
+  <br>
+<% end %>
