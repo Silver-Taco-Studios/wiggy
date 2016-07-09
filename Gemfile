@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'tzinfo-data'
 gem 'devise'
+gem 'active_record-acts_as'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.4'
