@@ -3,19 +3,14 @@ require 'json'
 class SummariseStop
   attr_reader :stop_id
 
-  Stop = Struct.new(:name, :services)
-  BusService = Struct.new(:id, :name, :status, :aimed_arrival, :expected_arrival) do |bus|
-    def delay
-      expected_arrival - aimed_arrival
-    end
-  end
+  Stop = Struct.new(:id, :name, :services)
+  BusService = Struct.new(:id, :name, :status, :aimed_arrival, :expected_arrival)
 
   def initialize(stop_id)
     @stop_id = stop_id
   end
 
   def call
-    data
     sort_data
   end
 
@@ -28,9 +23,9 @@ class SummariseStop
   def sort_data
     name = data['Stop']['Name']
     services = data['Services'].map do |hash|
-      bus_service_from_hash(hash) if hash_is_real_time(hash)
+      bus_service_from_hash(hash)
     end.compact
-    Stop.new(name, services)
+    Stop.new(stop_id, name, services)
   end
 
   def hash_is_real_time(hash)
@@ -43,7 +38,7 @@ class SummariseStop
       hash['Service']['Name'],
       hash['DepartureStatus'],
       DateTime.parse(hash['AimedArrival']),
-      DateTime.parse(hash['ExpectedDeparture'])
+      DateTime.parse(hash['DisplayDeparture'])
     )
   end
 

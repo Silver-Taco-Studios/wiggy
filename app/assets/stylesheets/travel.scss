@@ -3,5 +3,22 @@
   @extend .mdl-cell;
   @extend .mdl-cell--6-col;
   @extend .mdl-shadow--2dp;
-  padding: 0% 5%;
+  height: 300px;
+  .content {
+    padding: 0% 5%;
+    overflow: scroll;
+    max-height: 200px;
+  }
+}
+
+.metlink-card-header {
+  word-wrap: break-word;
+  color: #fff;
+  background-color: #387ade;
+  width: 100%;
+  max-height: 100px;
+  .mdl-card__title-text {
+    word-wrap: break-word;
+    width: 80%;
+  }
 }

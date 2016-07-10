@@ -1,9 +1,26 @@
-<%= button_to travel_index_path, method: 'get', remote: true, class: "mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" do %>
-   <i class="material-icons">navigate_before</i>
-<% end %> <h4><%= @stop.name %><br></h4>
-Services:<br>
-<% @stop.services.each do |bus| %>
-  The <%= "#{bus.name} (#{bus.id})" %> bus is <%= bus.status %>
-  and will arrive in <%= distance_of_time_in_words bus.expected_arrival , DateTime.now  %>
-  <br>
-<% end %>
+<div class="mdl-card__menu">
+  <div class="button-line">
+    <%= button_to travel_index_path, method: 'get', remote: true, class: "colored-button" do %>
+       <i class="material-icons">navigate_before</i>
+    <% end %>
+    <%= button_to travel_path(stop_id: @stop.id), method: 'get', remote: true, class: "colored-button with-ripple" do %>
+       <i class="material-icons">loop</i>
+    <% end %>
+  </div>
+</div>
+<div class="mdl-card__title metlink-card-header">
+  <h4 class="mdl-card__title-text"><%= @stop.name %><br></h4>
+</div>
+<div class="mdl-card__supporting-text content">
+  <ul class="mdl-list">
+    <% @stop.services.first(4).each do |bus| %>
+    <li class="mdl-list__item">
+      <div class="icon material-icons">
+        <%= bus.status == 'delayed' ? 'access_time' : 'done' %>
+      </div>
+        <b><%= "#{bus.id} (#{bus.name}) " %></b>
+        <%= distance_of_time_in_words bus.expected_arrival , DateTime.now %>
+    </li>
+    <% end %>
+  </ul>
+</div>

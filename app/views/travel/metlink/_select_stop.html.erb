@@ -1,11 +1,15 @@
-<h4> Select Stop ID to Track: </h4>
-<%= form_tag("travel/show", method: "get", remote: true) do %>
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <%= text_field_tag :stop_id, "7918", size: 4, pattern: "-?[0-9]*(\.[0-9]+)?", class: "mdl-textfield__input"%>
-    <%= label_tag :stop_id, "Stop ID", class: "mdl-textfield__label" %>
-    <span class="mdl-textfield__error">ID Must be a number</span>
-  </div>
-  <%= submit_tag "Submit", onclick:"$('#metlink-progress').show();",
-   class: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored"%>
-  <div id="metlink-progress" style="display:none;" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
-<% end %>
+<div class="mdl-card__title metlink-card-header">
+  <h4 class="mdl-card__title-text"> Select Stop ID to Track: </h4>
+</div>
+<div class="content">
+  <%= form_tag("travel/show", method: "get", remote: true) do %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= text_field_tag :stop_id, "7918", size: 4, pattern: "-?[0-9]*(\.[0-9]+)?", class: "mdl-textfield__input"%>
+      <%= label_tag :stop_id, "Stop ID", class: "mdl-textfield__label" %>
+      <span class="mdl-textfield__error">ID Must be a number</span>
+    </div>
+    <%= submit_tag "Submit", onclick:"$('#metlink-progress').show();",
+     class: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored"%>
+    <div id="metlink-progress" style="display:none;" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+  <% end %>
+</div>

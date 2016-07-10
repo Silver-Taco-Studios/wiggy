@@ -1,2 +1,17 @@
 @import "material";
 @import "travel";
+
+.button-line {
+  display: flex;
+}
+
+.colored-button {
+  @extend .mdl-button;
+  @extend .mdl-js-button !optional;
+  @extend .mdl-button--fab;
+  @extend .mdl-button--mini-fab;
+  @extend .mdl-button--colored;
+  .with-ripple {
+    @extend .mdl-js-ripple-effect !optional;
+  }
+}
