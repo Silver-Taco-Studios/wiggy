@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     get '/users/auth/:provider/upgrade' => 'omniauth_callbacks#upgrade', as: :user_omniauth_upgrade
     get '/users/auth/:provider/setup', :to => 'omniauth_callbacks#setup'
   end
+
+  get '/travel', to: 'travel#index'
+  get 'travel/stop_info', to: 'travel#stop_info'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -62,5 +65,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :travel
 end

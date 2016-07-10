@@ -1,9 +1,9 @@
 <div class="mdl-card__menu">
   <div class="button-line">
-    <%= button_to travel_index_path, method: 'get', remote: true, class: "colored-button" do %>
+    <%= button_to travel_path, method: 'get', remote: true, class: "colored-button" do %>
        <i class="material-icons">navigate_before</i>
     <% end %>
-    <%= button_to travel_path(stop_id: @stop.id), method: 'get', remote: true, class: "colored-button with-ripple" do %>
+    <%= button_to travel_stop_info_path(stop_id: @stop.id), method: 'get', remote: true, class: "colored-button with-ripple" do %>
        <i class="material-icons">loop</i>
     <% end %>
   </div>

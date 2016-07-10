@@ -2,7 +2,7 @@
   <h4 class="mdl-card__title-text"> Select Stop ID to Track: </h4>
 </div>
 <div class="content">
-  <%= form_tag("travel/show", method: "get", remote: true) do %>
+  <%= form_tag("travel/stop_info", method: "get", remote: true) do %>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <%= text_field_tag :stop_id, "7918", size: 4, pattern: "-?[0-9]*(\.[0-9]+)?", class: "mdl-textfield__input"%>
       <%= label_tag :stop_id, "Stop ID", class: "mdl-textfield__label" %>

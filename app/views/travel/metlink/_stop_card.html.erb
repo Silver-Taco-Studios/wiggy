@@ -2,7 +2,7 @@
   <div id="metlink-show">
     <%= render "travel/metlink/stop"  if @stop.present? %>
   </div>
-  <div id="metlink-select">
-    <%= render "travel/metlink/select_stop" if @stop.nil? %>
+  <div id="metlink-select" style="<%= @stop.present? ? 'display:none;' : ''%>">
+    <%= render "travel/metlink/select_stop" %>
   </div>
 </div>

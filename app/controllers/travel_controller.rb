@@ -1,13 +1,14 @@
 class TravelController < ApplicationController
   def index
+    @stop = SummariseStop.new(stop_id).call if stop_id.present?
     respond_to do |format|
       format.js
       format.html
     end
   end
 
-  def show
-    @stop = SummariseStop.new(stop_id).call if stop_id
+  def stop_info
+    @stop = SummariseStop.new(stop_id).call if stop_id.present?
     respond_to do |format|
       format.js
     end

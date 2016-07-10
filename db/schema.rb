@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709134446) do
+ActiveRecord::Schema.define(version: 20160710084501) do
 
   create_table "authentications", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 20160709134446) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
+  create_table "metlink_widgets", force: :cascade do |t|
+    t.integer  "stop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "spotify_widgets", force: :cascade do |t|
   end
