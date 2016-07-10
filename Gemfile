@@ -27,6 +27,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'tzinfo-data'
 gem 'devise'
 gem 'active_record-acts_as'
+gem 'certified'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-spotify'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.4'
